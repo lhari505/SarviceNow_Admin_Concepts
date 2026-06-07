@@ -2,7 +2,7 @@
 
 ## Course Overview
 
-Welcome to Lesson 1 of the ServiceNow Admin Learning Roadmap.
+ServiceNow Admin Learning Roadmap.
 
 This lesson introduces the ServiceNow platform, its architecture, products, benefits, and real-world usage. By the end of this lesson, you will understand why organizations use ServiceNow and how it helps automate business processes.
 
