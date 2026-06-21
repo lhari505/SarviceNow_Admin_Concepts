@@ -4,5 +4,6 @@
 
 | Lesson | Module | What You'll Learn |
 |---------|---------|---------|
-| **0** | [Personal Developer Instance Setup](Section1/Lesson0_Personal_Developer_Instance.md) | Create your ServiceNow account and obtain a free Personal Developer Instance (PDI). |
-| **1** | [ServiceNow Fundamentals](Section1/Lession1_ServiceNow_Overview.md) | ServiceNow Overview, Architecture, Environments, Release Cycle & User Interface. |
+| **0** | [Personal Developer Instance Setup](Section/Lesson0_Personal_Developer_Instance.md) | Create your ServiceNow account and obtain a free Personal Developer Instance (PDI). |
+| **1** | [ServiceNow Fundamentals](Section/Lession1_ServiceNow_Overview.md) | ServiceNow Overview, Architecture, Environments, Release Cycle & User Interface. |
+| **2** | [Records in ServiceNow](Section/Lesson2_Records.md) | Understand what records are, how tables/fields work, and Sys ID concept | Master database fundamentals in ServiceNow |
