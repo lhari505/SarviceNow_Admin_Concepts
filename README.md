@@ -8,3 +8,4 @@
 | **1** | [ServiceNow Fundamentals](Section/Lession1_ServiceNow_Overview.md) | ServiceNow Overview, Architecture, Environments, Release Cycle & User Interface. |
 | **2** | [Records in ServiceNow](Section/Lesson2_Records.md) | Understand what records are, how tables/fields work, and Sys ID concept | Master database fundamentals in ServiceNow |
 | **3** | [Lists and Forms in ServiceNow](Section/Lesson3_Working_with_Lists&Forms.md) | Learn how Lists and Forms work in ServiceNow, including navigation, filtering, and record interaction | Master working with ServiceNow UI components like Lists and Forms |
+| **4** | [Filters and Search in ServiceNow](Section/Lesson4_Filters_and_Search.md) | Learn how to search, filter, and locate records using Global Search, List Search, Column Search, and wildcards | Master efficient record searching and filtering techniques in ServiceNow |
