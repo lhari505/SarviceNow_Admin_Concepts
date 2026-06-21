@@ -1,15 +1,8 @@
-# ServiceNow Administrator Certification Course Notes
+## 📚 ServiceNow Administrator Learning Journey
 
-Welcome to the comprehensive notes and study guide for the **ServiceNow Certified Administrator** exam. These documents are structured to align directly with course topics, providing key points, detailed summaries, step-by-step processes, and exam certification focus areas.
+### 🚀 Beginner Level
 
----
-
-## 📚 Table of Contents
-
-| Lesson | Description | Quick Links |
-| :--- | :--- | :--- |
-
-| **Lesson 0** | **Personal Developer Instance**<br> Signup ServiceNow, Creation of PDI | [View Lesson 0 Notes](Section1/Lesson0_PersonalDeveloperInstanceCreation.md) |
-
-| **Lesson 1** | **Introduction to ServiceNow & ITSM**<br> ServiceNow platform capabilities, Multi-Tenant (Standard SaaS), Multi-Instance (ServiceNow Model). | [View Lesson 1 Notes](Section1/Lession1_ServiceNow_Overview.md) |
-
+| Lesson | Module | What You'll Learn |
+|---------|---------|---------|
+| **0** | [Personal Developer Instance Setup](Section1/Lesson0_Personal_Developer_Instance.md) | Create your ServiceNow account and obtain a free Personal Developer Instance (PDI). |
+| **1** | [ServiceNow Fundamentals](Section1/Lession1_ServiceNow_Overview.md) | Understand ServiceNow Overview, Enviornment, Releases, and platform basics. |
