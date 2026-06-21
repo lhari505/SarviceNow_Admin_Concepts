@@ -18,11 +18,11 @@ This section introduces the foundational architecture of the ServiceNow platform
 
 ## Detailed Notes
 
-### 1. What is ServiceNow?
+## 1. What is ServiceNow?
 
 ServiceNow is a cloud-based workflow automation platform used by organizations to manage IT services, employee requests, approvals, and business processes through a centralized system. It helps automate tasks, improve efficiency, and provide better service management.
 
-# Real-Life Example
+## Real-Life Example
 
 Think of ServiceNow as an online help desk and workflow management system.
 
@@ -37,7 +37,7 @@ For example:
 
 Everything happens automatically and is tracked in one system.
 
-# Why Companies Use ServiceNow
+## Why Companies Use ServiceNow
 
 ✅ Automates repetitive work
 
@@ -51,7 +51,7 @@ Everything happens automatically and is tracked in one system.
 
 ✅ Centralizes all service requests
 
-### 2. Multi-Instance vs. Multi-Tenant Architecture
+## 2. Multi-Instance vs. Multi-Tenant Architecture
 
 Understanding how ServiceNow holds data is critical for system administrators:
 
@@ -61,7 +61,7 @@ Understanding how ServiceNow holds data is critical for system administrators:
 
   * *Benefit:* Upgrades, database tuning, and custom application scripts can be managed independently for each client without breaking things for others.
 
-### 3. The Enterprise Environment Landscape
+## 3. The Enterprise Environment Landscape
 
 In a real enterprise deployment, you do not configure applications directly where regular employees work. ServiceNow infrastructure typically utilizes a three-tiered instance strategy:
 
