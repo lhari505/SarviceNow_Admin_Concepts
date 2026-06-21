@@ -1,26 +1,22 @@
-**Lecture Notes: ServiceNow Overview, Architecture, Environments, Release Cycle & User Interface**
-==================================================================================================
-
 Lecture Summary
 ---------------
 
-This lecture provides a foundational overview of **ServiceNow**, including its SaaS architecture, history, ecosystem, technology stack, release cycle, environments, and user interface. ServiceNow began as an **IT Service Management (ITSM)** platform but has evolved into a comprehensive enterprise workflow platform supporting multiple business functions. Understanding these core concepts is essential for both ServiceNow Administrators and Developers.
+This lecture provides a foundational overview of **ServiceNow**, including its architecture, ecosystem, technology stack, release cycle, environments, and user interface. ServiceNow is a **Software as a Service (SaaS)** platform hosted in ServiceNow data centers and accessed through a web browser. The lecture also introduces major ServiceNow product areas, development lifecycle environments, and core UI components that users interact with daily.
 
 * * * * *
 
 Key Points
 ==========
 
--   **ServiceNow** is a **Software as a Service (SaaS)** platform.
--   Customers access ServiceNow through a web browser.
--   ServiceNow is hosted in ServiceNow-managed data centers.
--   Originally focused on **ITSM (IT Service Management)**.
+-   **ServiceNow is a SaaS platform** hosted by ServiceNow.
+-   Originally focused on **IT Service Management (ITSM)**.
 -   Supports many business functions beyond ITSM.
--   Built using Java technologies and a MySQL database.
--   New releases occur approximately every **6--8 months**.
--   Organizations typically have **Development**, **Test**, and **Production** environments.
--   Regular cloning keeps environments synchronized.
--   The UI consists of the **Banner**, **Application Navigator**, and **Main Content Frame**.
+-   Built on a **Java-based technology stack**.
+-   Uses **feature releases**, **patch releases**, and **hotfixes**.
+-   Organizations typically have **Development, Test, and Production** environments.
+-   Frequent **cloning** keeps environments synchronized.
+-   Main UI components are the **Banner**, **Application Navigator**, and **Content Frame**.
+-   Users primarily work with **List Views** and **Form Views**.
 
 * * * * *
 
@@ -28,849 +24,566 @@ Detailed Notes
 ==============
 
 1\. What is ServiceNow?
-=======================
+-----------------------
 
-Definition
-----------
+### Definition
 
 **ServiceNow** is a cloud-based Software as a Service (SaaS) platform that organizations use to automate business processes and workflows.
 
-### SaaS Model
+Similar SaaS products include:
+
+-   Salesforce
+-   Workday
+
+### Key Characteristics
+
+-   No local installation required.
+-   Hosted in **ServiceNow Data Centers**.
+-   Accessed through any modern web browser.
+-   Applications and data are stored in ServiceNow infrastructure.
+-   Customers simply subscribe and access the platform online.
+
+### Important Concept
 
 Unlike traditional software:
 
-❌ No local installation
+❌ No software installation on user computers.
 
-❌ No server maintenance
+❌ No hosting in customer data centers.
 
-❌ No infrastructure management
-
-✅ Access through a browser
-
-✅ Subscription-based licensing
-
-✅ Hosted by ServiceNow
+✅ Hosted entirely by ServiceNow.
 
 * * * * *
 
-How ServiceNow Works
---------------------
+2\. ServiceNow Origins -- IT Service Management (ITSM)
+-----------------------------------------------------
 
-```
-Organization
-      ↓
-Subscription License
-      ↓
-ServiceNow Platform
-      ↓
-Access via Browser
-      ↓
-ServiceNow Data Centers
-```
+### What is ITSM?
 
-All applications, databases, and configurations are hosted in ServiceNow-managed data centers.
+**ITSM (IT Service Management)** focuses on managing IT services and support processes.
 
-* * * * *
+### Core ITSM Applications
 
-2\. History of ServiceNow
-=========================
+#### Incident Management
 
-ServiceNow Origins
-------------------
+Used to track and resolve service interruptions.
 
-ServiceNow initially focused on:
+Example:
 
-### IT Service Management (ITSM)
+-   Internet outage
+-   Email issue
+-   Laptop problem
+-   Software malfunction
 
-ITSM applications include:
+#### Problem Management
 
--   Incident Management
--   Problem Management
--   Change Management
+Used to identify root causes of recurring incidents.
 
-* * * * *
+#### Change Management
 
-Most Popular Application
-------------------------
+Used to control changes made to IT systems.
 
-### Incident Management
+### Most Popular Application
 
-An incident represents a disruption or issue affecting a service.
+**Incident Management** remains one of ServiceNow's most widely used applications.
 
-### Real-World Examples
+### Real-Life Example
 
--   Internet service outage
--   Email access issue
--   VPN connection problem
--   Mobile service interruption
+When calling:
 
-When users report these issues, support teams often create an incident record in ServiceNow.
+-   Internet provider
+-   Mobile carrier
+-   IT Help Desk
+
+A support agent may create an **Incident Ticket** in ServiceNow behind the scenes.
 
 * * * * *
 
-Growth Beyond ITSM
-------------------
+3\. Expansion of the ServiceNow Platform
+----------------------------------------
 
-ServiceNow has expanded significantly beyond traditional IT operations.
+ServiceNow has evolved far beyond ITSM.
 
-Today, ServiceNow supports many business functions across organizations.
+### Major Product Areas
 
-* * * * *
+#### IT Service Management (ITSM)
 
-3\. ServiceNow Ecosystem
-========================
+Core ticketing and service management.
 
-ServiceNow provides solutions across multiple business areas.
+#### IT Operations Management (ITOM)
 
-* * * * *
+Infrastructure monitoring and operations.
 
-IT Service Management (ITSM)
-----------------------------
+#### IT Business Management (ITBM)
 
-Core applications:
+Project and portfolio management.
 
--   Incident
--   Problem
--   Change
--   Request Management
-
-* * * * *
-
-IT Operations Management (ITOM)
--------------------------------
-
-Focuses on:
-
--   Infrastructure monitoring
--   Discovery
--   Event Management
-
-* * * * *
-
-IT Business Management (ITBM)
------------------------------
-
-Supports:
-
--   Project Management
--   Portfolio Management
--   Resource Planning
-
-* * * * *
-
-IT Asset Management (ITAM)
---------------------------
+#### IT Asset Management (ITAM)
 
 Tracks organizational assets.
 
 Examples:
 
-### Hardware Assets
-
 -   Laptops
 -   Servers
--   Mobile Devices
+-   Software licenses
 
-### Software Assets
+#### DevOps
 
--   Microsoft Office
--   Adobe Licenses
--   Operating Systems
+Supports development and deployment processes.
 
-* * * * *
+#### Security Operations (SecOps)
 
-DevOps
-------
+Security incident and vulnerability management.
 
-Supports:
+#### HR Service Delivery (HRSD)
 
--   CI/CD integration
--   Agile development
--   Deployment automation
+Employee service and HR workflows.
 
-* * * * *
+#### Customer Service Management (CSM)
 
-Security Operations
--------------------
+Customer support and service requests.
 
-Provides:
+#### Governance, Risk & Compliance (GRC)
 
--   Security incident management
--   Vulnerability response
+Risk management and regulatory compliance.
 
-* * * * *
+### Key Takeaway
 
-HR Service Delivery
--------------------
-
-Supports:
-
--   Employee onboarding
--   HR requests
--   Employee case management
-
-* * * * *
-
-Customer Service Management (CSM)
----------------------------------
-
-Supports customer-facing service operations.
-
-* * * * *
-
-Governance, Risk & Compliance (GRC)
------------------------------------
-
-Helps organizations:
-
--   Manage risk
--   Ensure compliance
--   Track audits
+ServiceNow continuously expands its offerings with every release.
 
 * * * * *
 
 4\. Custom Application Development
-==================================
+----------------------------------
 
-One of ServiceNow's most powerful capabilities is:
+One of ServiceNow's strongest capabilities is building **custom applications**.
 
-Application Development on the Now Platform
--------------------------------------------
+### Benefits
 
-Organizations can build custom applications without creating everything from scratch.
+Developers can leverage built-in platform features such as:
 
-* * * * *
-
-### Available Components
-
-#### Business Rules
-
-Automate backend processing.
-
-#### Workflows
-
-Automate approval processes and business logic.
-
-#### Forms
-
-Capture user input.
-
-#### Tables
-
-Store business data.
-
-* * * * *
-
-### Example
-
-A company could create:
-
-```
-Employee Travel Request Application
-```
-
-using:
-
--   Forms
--   Workflows
 -   Business Rules
+-   Workflows
+-   Forms
+-   Tables
 -   Notifications
+-   Approvals
 
-without building an entirely new platform.
+### Result
+
+Organizations can rapidly develop business applications with minimal infrastructure concerns.
 
 * * * * *
 
 5\. ServiceNow Technology Stack
-===============================
+-------------------------------
 
-Purpose
--------
+> Exam Note: Detailed stack knowledge is usually not heavily tested but is useful for understanding the platform.
 
-Understanding the stack helps developers understand how ServiceNow works behind the scenes.
+### Core Technologies
 
-* * * * *
-
-Java-Based Platform
--------------------
-
-ServiceNow is primarily built using Java technologies.
-
-* * * * *
-
-Apache Tomcat
--------------
-
-### Role
-
-Web Server
-
-Handles:
-
--   User requests
--   Application hosting
+| Component | Technology |
+| --- | --- |
+| Programming Platform | Java |
+| Web Server | Apache Tomcat |
+| Application Server | J2EE |
+| Database | MySQL |
+| JavaScript Engine | Mozilla Rhino |
 
 * * * * *
 
-J2EE Application Server
------------------------
+### Mozilla Rhino
 
-### Role
+**Mozilla Rhino** is a JavaScript engine written in Java.
 
-Executes business logic and platform services.
+Purpose:
 
-* * * * *
+-   Executes JavaScript inside the Java environment.
 
-MySQL Database
---------------
+Example:
 
-### Role
+When a developer writes:
 
-Stores:
+-   Business Rules
+-   Client Scripts
+-   Script Includes
 
--   Records
--   Tables
--   Configurations
--   User data
-
-* * * * *
-
-Mozilla Rhino
--------------
-
-### Definition
-
-A JavaScript engine written in Java.
-
-### Purpose
-
-Allows JavaScript execution within the Java environment.
-
-* * * * *
-
-### Example
-
-A Business Rule written in JavaScript:
-
-```
-current.priority = 1;
-```
-
-is executed through Mozilla Rhino.
-
-* * * * *
-
-ServiceNow Stack Diagram
-========================
-
-```
-Browser
-   ↓
-Apache Tomcat
-   ↓
-J2EE Application Server
-   ↓
-Mozilla Rhino
-   ↓
-MySQL Database
-```
+The JavaScript is processed using Rhino.
 
 * * * * *
 
 6\. ServiceNow Release Cycle
-============================
+----------------------------
 
-ServiceNow continuously introduces updates.
+ServiceNow delivers updates through:
 
-* * * * *
+### Feature Releases
 
-Feature Releases
-----------------
-
-### Purpose
-
-Deliver:
+Contain:
 
 -   New features
 -   New applications
 -   Platform enhancements
 
-* * * * *
-
-### Naming Convention
-
 Feature releases are named after cities.
 
 * * * * *
 
-Recent Releases
----------------
+### Recent Feature Releases
 
-| Release | Year |
+| Year | Release |
 | --- | --- |
-| San Diego | 2022 |
-| Tokyo | 2022 |
-| Utah | 2023 |
-| Vancouver | 2023 |
-| Washington DC | 2024 |
-| Xanadu | 2024 |
-| Yokohama | 2025 |
+| 2022 | San Diego |
+| 2022 | Tokyo |
+| 2023 | Utah |
+| 2023 | Vancouver |
+| 2024 | Washington DC |
+| 2024 | Xanadu |
+| 2025 | Yokohama |
 
-* * * * *
-
-Release Frequency
------------------
+### Release Frequency
 
 Typically:
 
-```
-Every 6--8 Months
-```
+**Every 6--8 months**
 
 * * * * *
 
-Patch Releases
-==============
+### Patch Releases
 
-### Purpose
+Contain:
 
-Fix:
-
--   Bugs
--   Defects
--   Stability issues
+-   Bug fixes
+-   Stability improvements
+-   Multiple hotfixes
 
 * * * * *
 
-Hotfixes
-========
+### Hotfixes
 
-### Purpose
+Contain:
 
-Resolve urgent issues quickly.
-
-### Characteristics
-
--   Released as needed
--   Smaller than patch releases
+-   Specific issue corrections
+-   Emergency fixes
 
 * * * * *
 
-Relationship
-------------
+### Important Note
 
-```
-Feature Release      ↓Patch Release      ↓Hotfixes
-```
+Course concepts generally remain applicable across releases.
 
-A patch release may contain multiple hotfixes.
+However:
+
+-   UI may vary slightly.
+-   Features may move locations.
+-   New capabilities may be added.
 
 * * * * *
 
 7\. ServiceNow Environments
-===========================
+---------------------------
 
-Organizations typically receive three environments.
+A typical ServiceNow implementation includes three environments.
 
-* * * * *
+### Development (DEV)
 
-Development Environment (DEV)
------------------------------
+Purpose:
 
-### Purpose
-
-Used by developers and administrators.
-
-Activities:
-
--   Build applications
--   Create workflows
--   Configure features
-
-* * * * *
-
-Test Environment (TEST)
------------------------
-
-### Purpose
-
-Validate changes before production.
+-   Build new features
+-   Create applications
+-   Perform configuration changes
 
 Activities:
 
+-   Development work
+-   Customization
+-   Initial testing
+
+* * * * *
+
+### Test (TEST)
+
+Purpose:
+
+-   Validate changes
 -   User Acceptance Testing (UAT)
--   Functional Testing
--   Bug Verification
+
+Activities:
+
+-   Functional testing
+-   Bug verification
+-   Regression testing
 
 * * * * *
 
-Production Environment (PROD)
------------------------------
+### Production (PROD)
 
-### Purpose
+Purpose:
 
-Live environment used by actual users.
+-   Live environment
 
-Contains:
+Activities:
 
--   Real business data
--   Active users
--   Production services
+-   Used by end users
+-   Runs business operations
 
 * * * * *
 
-Environment Flow
-================
+8\. Deployment Flow
+-------------------
 
-```
-Development      ↓Testing      ↓Production
-```
+### Standard Process
 
-* * * * *
+`Development\
+      ↓\
+     Test\
+      ↓\
+ Production`
 
-8\. Deployment Process
-======================
+### Workflow
 
-Step 1
-------
-
-Develop feature in DEV.
-
-* * * * *
-
-Step 2
-------
-
-Move changes to TEST.
+1.  Develop changes in DEV.
+2.  Move changes to TEST.
+3.  Perform validation and testing.
+4.  Fix defects if necessary.
+5.  Promote changes to PROD.
 
 * * * * *
 
-Step 3
-------
+9\. Cloning Best Practices
+--------------------------
 
-Perform testing.
+### What is Cloning?
 
-* * * * *
+Copying one ServiceNow instance into another.
 
-Step 4
-------
+Example:
 
-Move approved changes to PROD.
+`Production\
+   ↓\
+ Test\
+   ↓\
+ Development`
 
-* * * * *
-
-Step 5
-------
-
-Users begin using the feature.
-
-* * * * *
-
-9\. Cloning Best Practice
-=========================
-
-What is Cloning?
-----------------
-
-Copying one environment into another.
-
-* * * * *
-
-Common Practice
----------------
-
-Clone:
-
-```
-Development
-      ↓
-Testing
-      ↓
-Production
-```
-
-* * * * *
-
-Why Clone?
-----------
+### Why Clone?
 
 Keeps environments synchronized.
 
-Benefits:
+### Benefits
 
--   Consistent testing
--   Accurate development
--   Reduced deployment risk
+-   Accurate testing
+-   Consistent data
+-   Reliable development
+-   Fewer deployment surprises
 
-* * * * *
-
-Risk of Not Cloning
--------------------
+### Risks of Not Cloning
 
 Over time:
 
-```
-Development ≠ Test ≠ Production
-```
+-   DEV and TEST become outdated.
+-   Data differs from Production.
+-   Testing becomes unreliable.
+-   Deployment risks increase.
 
-This can create:
+### Best Practice
 
--   Testing failures
--   Deployment conflicts
--   Unexpected bugs
+Perform regular cloning from:
+
+**Production → Test → Development**
 
 * * * * *
 
 10\. ServiceNow User Interface (UI)
-===================================
+-----------------------------------
 
-The ServiceNow interface has three major components.
+The UI contains three primary components.
 
-* * * * *
-
-Banner
-------
+### 1\. Banner
 
 Located at the top.
 
-Contains:
+Purpose:
 
--   Search
--   User Profile
--   Notifications
+-   Navigation
+-   User profile access
+-   Global actions
 
 * * * * *
 
-Application Navigator
----------------------
+### 2\. Application Navigator
 
 Located on the left side.
 
-Used to:
+Purpose:
 
 -   Search applications
--   Open modules
--   Navigate the platform
+-   Access modules
+-   Navigate platform features
 
 * * * * *
 
-Main Content Frame
-------------------
+### 3\. Main Content Frame
 
-Located in the center.
+Located in the center/right area.
 
-Displays:
+Purpose:
 
--   Lists
--   Forms
--   Dashboards
--   Reports
+-   Displays forms
+-   Displays lists
+-   Displays records and applications
 
 * * * * *
 
-UI Layout
-=========
+11\. List View
+--------------
 
-```
-+----------------------+
-| Banner               |
-+----------------------+
+### Purpose
 
-| Navigator | Content |
-|            | Frame  |
-|            |        |
+Displays multiple records at once.
 
-* * * * *
+### Examples
 
-11\. Lists and Forms
-====================
+-   Incident list
+-   Change list
+-   User list
 
-Most daily work occurs in:
+### Benefits
 
-List View
----------
-
-Displays:
-
-```
-Multiple Records
-```
-
-Example:
-
-```
-Incident List
-```
+-   Search records
+-   Filter records
+-   Sort records
+-   Bulk update records
 
 * * * * *
 
-Form View
----------
+12\. Form View
+--------------
 
-Displays:
+### Purpose
 
-```
-Single Record
-```
+Displays a single record.
 
-Example:
+### Examples
 
-```
-Incident INC0010001
-```
+Viewing one:
 
-* * * * *
+-   Incident
+-   User
+-   Change Request
 
-12\. UI Changes Across Releases
-===============================
+### Benefits
 
-ServiceNow occasionally updates the interface.
-
-### Important Point
-
-The appearance may change, but:
-
-✅ Core functionality remains similar.
-
-✅ Features may move locations.
-
-✅ Navigation may slightly differ.
+-   Create records
+-   Update records
+-   Review details
 
 * * * * *
 
-Example
--------
+13\. UI Changes Across Releases
+-------------------------------
 
-A button visible in one release may:
+ServiceNow occasionally updates the UI.
 
--   Move to another menu
--   Have a different icon
--   Appear in a different position
+### Important Points
+
+-   Core functionality remains similar.
+-   Menu locations may change.
+-   Appearance may differ slightly.
+-   Concepts remain consistent.
+
+### Student Tip
+
+If your instance looks different:
+
+-   Do not panic.
+-   Search for the same functionality.
+-   The feature likely still exists.
 
 * * * * *
 
 Steps / Process
 ===============
 
-ServiceNow Change Deployment Process
-------------------------------------
+ServiceNow Development Lifecycle
+--------------------------------
 
 ### Step 1
 
-Develop feature in DEV.
+Develop changes in **Development Environment**.
 
 ### Step 2
 
-Move changes to TEST.
+Move changes to **Test Environment**.
 
 ### Step 3
 
-Perform testing.
+Perform testing and validation.
 
 ### Step 4
 
-Resolve defects.
+Fix identified defects.
 
 ### Step 5
 
-Deploy to PROD.
+Promote changes to **Production Environment**.
 
 ### Step 6
 
-Users access the new functionality.
-
-* * * * *
-
-Environment Synchronization Process
------------------------------------
-
-### Step 1
-
-Clone Production.
-
-### Step 2
-
-Overwrite Test Environment.
-
-### Step 3
-
-Clone Production.
-
-### Step 4
-
-Overwrite Development Environment.
-
-### Step 5
-
-Continue development with updated data.
+Perform regular cloning from Production.
 
 * * * * *
 
 Important Terms
 ===============
-| Term                | Meaning                                         |
-| ------------------- | ----------------------------------------------- |
-| **ServiceNow**      | Cloud-based workflow automation platform        |
-| **SaaS**            | Software delivered through a subscription model |
-| **ITSM**            | IT Service Management                           |
-| **Incident**        | Unplanned interruption to a service             |
-| **Business Rule**   | Server-side automation logic                    |
-| **Workflow**        | Automated business process                      |
-| **Feature Release** | Major platform release containing new features  |
-| **Patch Release**   | Bug-fix release                                 |
-| **Hotfix**          | Emergency fix for specific issues               |
-| **Clone**           | Copy one environment to another                 |
-| **DEV**             | Development Environment                         |
-| **TEST**            | Testing Environment                             |
-| **PROD**            | Production Environment                          |
 
+| Term | Meaning |
+| --- | --- |
+| **ServiceNow** | Cloud-based SaaS platform for digital workflows |
+| **SaaS** | Software delivered through the internet via subscription |
+| **ITSM** | IT Service Management |
+| **Incident** | Record used to track service disruptions |
+| **Problem** | Root cause analysis of recurring incidents |
+| **Change** | Controlled modification to IT systems |
+| **Business Rule** | Server-side automation logic |
+| **Feature Release** | Major release containing new functionality |
+| **Patch Release** | Collection of fixes and improvements |
+| **Hotfix** | Immediate fix for specific issues |
+| **Clone** | Copying one instance into another |
+| **DEV** | Development Environment |
+| **TEST** | Testing Environment |
+| **PROD** | Production Environment |
+| **List View** | Displays multiple records |
+| **Form View** | Displays a single record |
 
 * * * * *
 
 Commands / Syntax / Configuration
 =================================
 
-Environment Flow
-----------------
+### Environment Flow
 
 ```
-DEV
- ↓
-TEST
- ↓
-PROD
+DEV → TEST → PROD
 ```
 
-* * * * *
-
-Clone Strategy
---------------
+### Clone Flow
 
 ```
-PROD
- ↓
-TEST
-
-PROD
- ↓
-DEV
+PROD → TESTPROD → DEV
 ```
 
-* * * * *
+### ServiceNow Stack
 
-ServiceNow Architecture
------------------------
-
-```
-Browser
- ↓
-Tomcat
- ↓
-J2EE
- ↓
-Rhino
- ↓
-MySQL
-```
+`Java\
+   ↓\
+Apache Tomcat\
+   ↓\
+J2EE Application Server\
+   ↓\
+MySQL Database\
+   ↓\
+Mozilla Rhino (JavaScript Engine)`
 
 * * * * *
 
@@ -880,53 +593,46 @@ Examples
 Example 1: Incident Management
 ------------------------------
 
-User reports:
+Employee cannot access email.
 
-```
-Unable to Access Email
-```
+Process:
 
-Support creates:
-
-```
-Incident Record
-```
-
-inside ServiceNow.
+1.  Create Incident.
+2.  Assign technician.
+3.  Investigate issue.
+4.  Resolve incident.
+5.  Close ticket.
 
 * * * * *
 
-Example 2: Custom Application
------------------------------
+Example 2: Application Development
+----------------------------------
 
-HR creates:
+Business needs an Employee Asset Request application.
 
-```
-Employee Onboarding Application
-```
+Developer uses:
 
-using:
-
+-   Tables
 -   Forms
--   Workflows
 -   Business Rules
+-   Workflows
+
+to quickly build the solution.
 
 * * * * *
 
-Example 3: Environment Deployment
----------------------------------
+Example 3: Environment Promotion
+--------------------------------
 
-Developer creates:
+Developer creates a feature in DEV.
 
-```
-New Approval Workflow
-```
-
-Flow:
+After testing:
 
 ```
 DEV → TEST → PROD
 ```
+
+The feature becomes available to end users.
 
 * * * * *
 
@@ -937,88 +643,61 @@ Important Points for Exams
 --------------------------
 
 -   ServiceNow is a **SaaS platform**.
--   ServiceNow is hosted in ServiceNow data centers.
--   ServiceNow originated as an **ITSM platform**.
--   Incident Management is the most widely used application.
--   ServiceNow supports many business areas beyond ITSM.
--   ServiceNow uses Java technologies and MySQL.
--   Feature releases occur approximately every **6--8 months**.
--   Organizations typically use **DEV, TEST, PROD** environments.
--   Production should be cloned regularly to lower environments.
--   UI contains Banner, Navigator, and Content Frame.
+-   ServiceNow originated in **ITSM**.
+-   Know Incident, Problem, and Change Management.
+-   Understand DEV, TEST, and PROD environments.
+-   Understand cloning purpose.
+-   Know List View vs Form View.
+-   Understand feature releases, patches, and hotfixes.
+-   Feature releases are named after cities.
+-   ServiceNow supports custom application development.
 
 * * * * *
 
 Common Mistakes
 ---------------
 
-❌ Thinking ServiceNow must be installed locally.
+❌ Thinking ServiceNow is installed locally.
 
-❌ Confusing Patch Releases with Feature Releases.
+❌ Confusing TEST and PROD environments.
 
-❌ Making changes directly in Production.
+❌ Ignoring cloning best practices.
 
-❌ Forgetting to clone environments regularly.
+❌ Assuming UI differences mean functionality is removed.
 
-❌ Assuming UI changes affect core functionality.
+❌ Deploying directly to Production without testing.
 
 * * * * *
 
 Things to Remember
 ------------------
 
-✅ ServiceNow = SaaS.
+✅ ServiceNow is cloud-hosted.
 
-✅ Hosted by ServiceNow.
+✅ Incident Management is ServiceNow's most recognized application.
 
-✅ Started with ITSM.
+✅ Custom applications are a major platform capability.
 
-✅ Incident Management is the flagship application.
+✅ Feature releases occur approximately every 6--8 months.
 
-✅ Supports HR, Security, DevOps, Asset Management, and more.
+✅ Organizations typically use DEV, TEST, and PROD environments.
 
-✅ Java + MySQL architecture.
+✅ Cloning keeps environments synchronized.
 
-✅ Releases every 6--8 months.
-
-✅ Use DEV → TEST → PROD deployment process.
-
-✅ Clone Production regularly.
+✅ Most user work occurs in List Views and Form Views.
 
 * * * * *
 
 Real-World Application
 ======================
 
-Organizations use ServiceNow to:
+A large enterprise may use ServiceNow to:
 
--   Manage IT incidents
--   Automate employee onboarding
--   Track company assets
--   Handle security incidents
--   Manage customer requests
--   Perform compliance audits
+-   Manage IT incidents.
+-   Track hardware and software assets.
+-   Automate HR onboarding.
+-   Handle customer service requests.
+-   Manage security incidents.
+-   Track compliance requirements.
 
-A large enterprise may have:
-
-```
-50,000+ UsersThousands of Daily TicketsMultiple Custom Applications
-```
-
-all running on a single ServiceNow platform.
-
-* * * * *
-
-Quick Revision (30 sec)
-=======================
-
--   ServiceNow is a **SaaS platform**.
--   Hosted in ServiceNow data centers.
--   Started with **ITSM**.
--   Most popular application = **Incident Management**.
--   Supports HR, Security, DevOps, ITAM, CSM, and GRC.
--   Built on Java, Tomcat, Rhino, and MySQL.
--   Releases occur every **6--8 months**.
--   Environments: **DEV → TEST → PROD**.
--   Clone Production regularly.
--   UI consists of Banner, Navigator, and Main Content Frame.
+Developers build and test changes in **DEV**, validate them in **TEST**, and deploy them to **PROD**. Regular cloning ensures all environments stay aligned with the live system.
